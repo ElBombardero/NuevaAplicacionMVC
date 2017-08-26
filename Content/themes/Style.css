@@ -1,0 +1,121 @@
+﻿body {
+}
+.w3layouts-top-strip {
+    background-color: dodgerblue;
+    padding: 0.5em 1em;
+}
+
+.dodgerblue {
+    background-color: dodgerblue;
+    padding: 0.5em 1em;
+}
+
+.lawngreen{
+    background-color: lawngreen;
+    padding: 0.5em 1em;
+}
+
+.yellow{
+    background-color: yellow;
+    padding: 0.5em 1em;
+}
+
+.forestgreen{
+    background-color: forestgreen;
+    padding: 0.5em 1em;
+}
+
+.lightseagreen{
+    background-color: lightseagreen;
+    padding: 0.5em 1em;
+}
+
+.lightskyblue{
+    background-color: lightskyblue;
+    padding: 0.5em 1em;
+}
+
+.lightsteelblue{
+    background-color: lightsteelblue;
+    padding: 0.5em 1em;
+}
+
+.mediumslateblue{
+    background-color: mediumslateblue;
+    padding: 0.5em 1em;
+}
+
+.mediumorchid{
+    background-color: mediumorchid;
+    padding: 0.5em 1em;
+}
+
+.mediumturquoise{
+    background-color: mediumturquoise;
+    padding: 0.5em 1em;
+}
+
+.mediumblue{
+    background-color: mediumblue;
+    padding: 0.5em 1em;
+}
+
+.midnightblue{
+    background-color: midnightblue;
+    padding: 0.5em 1em;
+}
+
+.paleturquoise{
+    background-color: paleturquoise;
+    padding: 0.5em 1em;
+}
+
+.powderblue{
+    background-color: powderblue;
+    padding: 0.5em 1em;
+}
+
+.skyblue{
+    background-color: skyblue;
+    padding: 0.5em 1em;
+}
+
+.slateblue{
+    background-color: slateblue;
+    padding: 0.5em 1em;
+}
+.royalblue{
+    background-color: royalblue;
+    padding: 0.5em 1em;
+}
+
+.navy{
+    background-color: navy;
+    padding: 0.5em 1em;
+}
+
+.orchid{
+    background-color: orchid;
+    padding: 0.5em 1em;
+}
+
+.plum{
+    background-color: plum;
+    padding: 0.5em 1em;
+}
+
+.purple{
+    background-color: purple;
+    padding: 0.5em 1em;
+}
+@media screen and (max-width:900px){
+    
+    ul.nav.navbar-nav {
+        margin-left: 17em;
+        margin-top: 2em;
+	}
+
+    nav {
+        color:yellow;
+    }
+}

@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Mi aplicación ASP.NET MVC</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/themes/font-awesome.css" rel="stylesheet" />
+        <link href="~/Content/themes/sidebar-menu.css" rel="stylesheet" />
+        <link href="~/Content/themes/estilo.css" rel="stylesheet" />
+        <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+        <script src="~/Scripts/sidebar-menu.js"></script>
+        <script src="~/Scripts/bootstrap.js"></script>
+        <script src="~/Scripts/funcines.js"></script>
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="@Url.Action("index", "Home")"><small class="letra1">MMA</small><small class="letra2">new</small></a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class=""><a href="@Url.Action("Foro", "Home")">Foros <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">Imagenes</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Eventos <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Proximos</a></li>
+                                        <li><a href="#">Actuales</a></li>
+                                        <li><a href="#">Pasados</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Favoritos</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="@Url.Action("PostearArticulo","home")">Crear articulo</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        @Html.Partial("_LoginPartial")
+                                        <li><a href="#">salir</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <form class="navbar-form navbar-right">
+                                <div class="form-group">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-default">Buscar</button>
+                            </form>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+        </header>
+            @RenderSection("featured", required: false)
+            <section class="main container body">
+                <div class="row">
+                        <aside class="col-md-2 hidden-xs hidden-sm contenido-izquierdo">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item active">Noticias</a>
+                                <a href="#" class="list-group-item">Mas vistas</a>
+                                <a href="#" class="list-group-item">Peleadores</a>
+                                <a href="#" class="list-group-item">Boxeo</a>
+                                <a href="#" class="list-group-item">jiu-jitsu</a>
+                                <a href="#" class="list-group-item">Peleas</a>
+                                <a href="#" class="list-group-item">Grappling</a>
+                                <a href="#" class="list-group-item">Campamentos</a>
+                                <a href="#" class="list-group-item">Compañeros</a>
+                                <a href="#" class="list-group-item">Rankings</a>
+                            </div>
+                            <p>anuncio:</p>
+                            <div class="contenedor-anuncio">
+                                <img class="anuncio-pagina" src="http://www.anunciosinmobiliariosinternacionales.info/wp-content/uploads/2014/05/anunciosinmobiliariosinternacionales.jpg">
+                            </div>
+                        </aside>
+                    <section class="col-md-7 contenido-principal">
+                        <div class="cuerpo">
+                            @RenderBody()
+                        </div>
+                    </section>
+                    <aside class="col-md-3 hidden-xs hidden-sm contenido-derecho">
+                        <p>anuncio:</p>
+                        <div class="contenedor-anuncio">
+                            <img class="anuncio-pagina" src="https://www.motorafondo.net/wp-content/2012/03/anuncio-nuevo-volkswagen-up.jpg">
+                        </div>
+                        <div class="list-group">
+                            <h2 class="text-center reciente">Reciente</h2>
+                            <a href="#" class="list-group-item active">Noticia</a>
+                            <a href="#" class="list-group-item">Noticia</a>
+                            <a href="#" class="list-group-item">Noticia</a>
+                            <a href="#" class="list-group-item">Foro</a>
+                            <a href="#" class="list-group-item">Noticia</a>
+                            <a href="#" class="list-group-item">Foro</a>
+                            <a href="#" class="list-group-item">Foro</a>
+                            <a href="#" class="list-group-item">Noticia</a>
+                            <a href="#" class="list-group-item">Noticia</a>
+                            <a href="#" class="list-group-item">Foro</a>
+                            <a href="#" class="list-group-item">Noticia</a>
+                            <a href="#" class="list-group-item">Noticia</a>
+                            <a href="#" class="list-group-item">Noticia</a>
+                            <a href="#" class="list-group-item">Noticia</a>
+                        </div>
+                    </aside>
+                    <aside class="visible-xs visible-sm">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">Noticias</a>
+                            <a href="#" class="list-group-item">Mas vistas</a>
+                            <a href="#" class="list-group-item">Peleadores</a>
+                            <a href="#" class="list-group-item">Boxeo</a>
+                            <a href="#" class="list-group-item">jiu-jitsu</a>
+                            <a href="#" class="list-group-item">Peleas</a>
+                            <a href="#" class="list-group-item">Grappling</a>
+                            <a href="#" class="list-group-item">Campamentos</a>
+                            <a href="#" class="list-group-item">Compañeros</a>
+                            <a href="#" class="list-group-item">Rankings</a>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        <footer>
+            <div class="text-center">
+                <div class="">
+                    <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET MVC</p>
+                </div>
+            </div>
+        </footer><!--<br><br><br><br><br><br><br><br>-->
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

@@ -1,0 +1,353 @@
+﻿/*===========================================-----Latout-----=================================================*/
+
+body {
+    background-color:rgb(0, 0, 77);
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+}
+
+.navbar{
+	border-radius:0px;
+    margin-bottom:10px;
+}
+
+.letra1 {
+	font-size: 28px;
+	color:CornflowerBlue;
+}
+
+.letra2 {
+	font-size: 20px;
+	color:DarkGrey ;
+}
+
+header {
+    margin-top:70px;
+}
+
+.body {
+    width:90%;
+}
+.row {
+    background-color:white;
+    padding-top:10px;
+}
+
+/*.contenido-izquierdo {
+    background-color:rgb(26, 26, 26);
+    margin-bottom:200px;
+    border-top:20px solid rgb(26, 26, 26);
+    border-bottom:1000px solid rgb(26, 26, 26);
+    padding-bottom:100%;
+}
+*/
+
+.contenido{
+}
+
+.contenido-derecho {
+    
+}
+
+.contenedor-anuncio {
+    width:100%;
+    height:200px;
+}
+.anuncio-pagina {
+    width:100%;
+    height:100%;
+}
+
+.reciente{
+    text-align: center;
+    font-weight:500;
+    letter-spacing: 5px;
+    color: dodgerblue;
+    background: rgba(0, 0, 0, 0.70);
+    padding: 15px 0;
+    font-size: 120%;
+}
+
+.cuerpo {
+    background-color: white;
+    clear: both;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-width:5px;
+}
+
+/*=====================================---Index---======================================*/
+.contenido {
+    margin-left:5px;
+}
+
+.mostrar-todo {
+	background-color:transparent ;
+	padding:0;
+	border: 0;
+	color:dodgerblue;
+}
+
+.paginacion-articulo {
+    background-color:rgb(26, 26, 26);
+}
+
+.migas .breadcrumb .pagina-actual {
+    color:white;
+}
+
+.Contenedor-Imagen {
+	margin-right:10px;
+	width:30%;
+	border-color: whitesmoke;
+    border-style:solid;
+    border-width:3px;
+}
+
+.Contenedor-Imagen img{
+	width:100%;
+}
+
+.post-title-inicio {   
+    font-size: 1.5em;
+    font-weight:800;
+    margin-top:0;
+}
+/*==========================---Index Fin---=============================*/
+.paginacion{
+    background-color:white ;
+    /*background-image: url("http://www.adamelliot.com.au/ewExternalFiles/Website%20Background.jpg");*/
+    margin: 0 auto;
+}
+
+.pagination {
+    border:2px solid rgb(51, 122, 183);
+}
+
+.fijado {
+    position:fixed;
+}
+
+.Sobre-El-footer {
+	padding-bottom:20px;
+	margin-bottom:20px;
+	border-bottom:1px solid #999;
+}
+footer {
+    background-color: rgb(0, 0, 26);
+    color: white;
+    height:50px;
+    padding-top:15px;
+    padding-bottom:10px;
+}
+/*====-----Latout Fin-----====*/
+
+/*=======================---Articulo Post---====================*/
+
+.articulo {
+    width:100%;
+    height:100%;
+}
+
+
+/.contenedor-imagen-posteada img{
+    width:80%;
+    margin:auto;
+    background-color: rgb(0, 0, 26);
+
+}
+
+.contenedor-imagen-posteada {
+    border-style:solid;
+    border-color:whitesmoke;
+    margin:auto;
+    width:85%;
+    background-image: url("http://www.bjpenn.com/wp-content/uploads/2015/06/Yoel-Romero.png");
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat:no-repeat;
+}
+.h4{
+    text-align: center;
+    margin: 11.3em 0 2em 0;
+    font-weight:500;
+    letter-spacing: 5px;
+    color: dodgerblue;
+    background: rgba(0, 0, 0, 0.70);
+    padding: 15px 0;
+    border-bottom:solid;
+    border-bottom-color:black;
+}
+
+.contenido-articulo {
+    width:95%;
+    margin: auto;
+}
+
+.post-articulo {
+    font: oblique 120% sans-serif bold;
+}
+
+.contenido-articulo iframe {
+    width:80%;
+}
+
+.hr {
+    border:1px solid rgb(51, 122, 183);
+}
+
+/*==Comentarios==*/
+.comentario-articulo {
+    width:100%;
+    height:auto;
+    /*border:1px solid red;*/
+}
+
+.comentar {
+    width:100%;
+}
+
+#comentarios {
+    width:90%;
+    /*border:1px solid purple;*/
+}
+.datos-comentario-usuario {
+    width:100%;
+    height:53px;
+    /*border:1px solid yellow; */
+}
+#comentarios img {
+    width:50px;
+    border:2px solid white;
+    border-radius:2px;
+}
+.datos-comentario {
+    width:40%;
+    /*border:1px solid red; */
+}
+
+/*================Registro=========================*/
+
+.titulo-registro {
+    background-color:rgb(51, 122, 183);
+    border-radius:6px;
+}
+.contenido-registro {
+    width:50%;
+    margin:auto;
+}
+
+.panel-tipo {
+    margin:auto;
+}
+.formulario-text {
+    border-style:solid;
+    border-radius:5px;
+    border-color:black ;
+}
+
+/*=========================------FORO----===================================*/
+
+.foro-elemento {
+    border-style:solid;
+    border-radius:5px;
+    border-color:dodgerblue;
+    height:150px;
+
+}
+
+.foro-contenedor-imagen-contenido {
+    width:100%;
+    height:100%;
+}
+
+.foro-contenedor-imagen {
+    width:25%;
+    height:100%;
+    float:left;
+}
+
+.foro-contenedor-imagen img{
+    width:55%;
+    height:50%;
+}
+
+.foro-contenedor-contenido {
+    float:right;
+    width:75%;
+    height:100%;
+}
+
+.foro-contenido-titulo {
+    width:100%;
+    height:40%;
+}
+
+.foro-contenido-titulo-letra {
+    text-align: center;
+    font-weight:500;
+    letter-spacing: 1px;
+    color: black;
+    border-bottom:solid;
+    border-bottom-color:black;
+}
+
+.foro-contenido-articulo small {
+    letter-spacing: 0.1px;
+}
+
+@media screen and (max-width:900px){
+/*==========================Layout==========================*/
+    .body {
+        width:100%;
+    }
+
+	article img {
+		height:200px; 
+		width:100%;
+	}
+/*=================================Index=================*/
+	.post .Contenedor-Imagen {
+		margin-right:auto;
+		width:auto;
+	}
+
+    .contenedor-imagen-posteada img{
+        width:100%;
+        margin:auto;
+    }
+/*======================articulo posteado==============*/
+    .comentar form input{
+        width:80%;
+    }
+
+    .contenedor-imagen-posteada {
+        width:100%;
+    }
+
+    .comentar form button{
+        width:20%;
+    }
+
+    .datos-comentario {
+        width:100%;
+        border:1px solid red;
+    }
+
+/*================Registro=========================*/
+    .contenido-registro {
+        width:100%;
+        margin:auto;
+    }
+    /*=====---FORO----====================*/
+
+    .foro-elemento {
+        height:240px;
+
+    }
+    .foro-contenido-titulo {
+        width:100%;
+        height:20%;
+    }
+}
