@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MMAnewModelStoreContainer" CdmEntityContainer="MMAnewEntities2">
+    <EntitySetMapping Name="foros">
+      <EntityTypeMapping TypeName="MMAnewModel.foros">
+        <MappingFragment StoreEntitySet="foros">
+          <ScalarProperty Name="foro_id" ColumnName="foro_id" />
+          <ScalarProperty Name="foro_title" ColumnName="foro_title" />
+          <ScalarProperty Name="foro_image" ColumnName="foro_image" />
+          <ScalarProperty Name="foro_content" ColumnName="foro_content" />
+          <ScalarProperty Name="foro_autor" ColumnName="foro_autor" />
+          <ScalarProperty Name="foro_date" ColumnName="foro_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="noticias">
+      <EntityTypeMapping TypeName="MMAnewModel.noticias">
+        <MappingFragment StoreEntitySet="noticias">
+          <ScalarProperty Name="noticia_id" ColumnName="noticia_id" />
+          <ScalarProperty Name="noticia_title" ColumnName="noticia_title" />
+          <ScalarProperty Name="noticia_image" ColumnName="noticia_image" />
+          <ScalarProperty Name="noticia_content" ColumnName="noticia_content" />
+          <ScalarProperty Name="noticia_autor" ColumnName="noticia_autor" />
+          <ScalarProperty Name="noticia_date" ColumnName="noticia_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

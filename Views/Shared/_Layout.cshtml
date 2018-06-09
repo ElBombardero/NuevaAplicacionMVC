@@ -3,7 +3,7 @@
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - Mi aplicación ASP.NET MVC</title>
+        <title>@ViewBag.Title MMAnew</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link href="~/Content/bootstrap.css" rel="stylesheet" />
@@ -28,13 +28,13 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="@Url.Action("index", "Home")"><small class="letra1">MMA</small><small class="letra2">new</small></a>
+                            <a class="navbar-brand" href="@Url.Action("index", "noticias")"><small class="letra1">MMA</small><small class="letra2">new</small></a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li class=""><a href="@Url.Action("Foro", "Home")">Foros <span class="sr-only">(current)</span></a></li>
+                                <li class=""><a href="@Url.Action("index", "Foro")">Foros <span class="sr-only">(current)</span></a></li>
                                 <li><a href="#">Imagenes</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Eventos <span class="caret"></span></a>
@@ -48,7 +48,7 @@
                                 </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="@Url.Action("PostearArticulo","home")">Crear articulo</a></li>
+                                <li><a href="@Url.Action("CrearArticulo", "Noticias", new { id= "DayanMontero" })">Crear articulo</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
@@ -88,7 +88,7 @@
                                 <img class="anuncio-pagina" src="http://www.anunciosinmobiliariosinternacionales.info/wp-content/uploads/2014/05/anunciosinmobiliariosinternacionales.jpg">
                             </div>
                         </aside>
-                    <section class="col-md-7 contenido-principal">
+                    <section class="ancho-7 contenido-principal">
                         <div class="cuerpo">
                             @RenderBody()
                         </div>

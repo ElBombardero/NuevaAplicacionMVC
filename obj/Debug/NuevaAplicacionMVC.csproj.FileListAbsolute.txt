@@ -99,3 +99,6 @@ c:\users\elblo\documents\visual studio 2013\Projects\NuevaAplicacionMVC\NuevaApl
 c:\users\elblo\documents\visual studio 2013\Projects\NuevaAplicacionMVC\NuevaAplicacionMVC\obj\Debug\NuevaAplicacionMVC.csprojResolveAssemblyReference.cache
 c:\users\elblo\documents\visual studio 2013\Projects\NuevaAplicacionMVC\NuevaAplicacionMVC\obj\Debug\NuevaAplicacionMVC.dll
 c:\users\elblo\documents\visual studio 2013\Projects\NuevaAplicacionMVC\NuevaAplicacionMVC\obj\Debug\NuevaAplicacionMVC.pdb
+C:\Users\elblo\documents\visual studio 2013\Projects\NuevaAplicacionMVC\NuevaAplicacionMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\elblo\documents\visual studio 2013\Projects\NuevaAplicacionMVC\NuevaAplicacionMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\elblo\documents\visual studio 2013\Projects\NuevaAplicacionMVC\NuevaAplicacionMVC\bin\es\EntityFramework.SqlServer.resources.dll

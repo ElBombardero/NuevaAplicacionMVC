@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NuevaAplicacionMVC.Models.noticias>
+
+<body>
+    <div class="migas">
+        <ol class="breadcrumb">
+            <li><a href="#">Inicio</a></li>
+            <li class="active"><a href="#">Noticias</a></li>
+            <button class="mostrar-todo pull-right visible-xs visible-sm" onclick="OcultarContenido()">ocultar</button>
+        </ol>
+    </div>
+    <div id="contenido">
+        @foreach (var noticia in Model){
+            <article class="post clearfix">
+                <a href='@Url.Action("verArticulo", "Noticias", new { id = @noticia.noticia_id })' class="Contenedor-Imagen pull-left">
+                    <img src='@Url.Content(@noticia.noticia_image)' />
+                </a>
+                <h2 class="post-title-inicio"><a> @Html.ActionLink(@noticia.noticia_title, "verArticulo", new { id = noticia.noticia_id })</a></h2>
+                <p><span class="post-fecha">15 de julio 2006</span>  por <span class="post-autor"><a href="#">@noticia.noticia_autor</a></span></p>
+                <p class="post-contenido text-justify">
+                    @Html.limitar(@noticia.noticia_content, 300)
+                </p>
+                <div class="Contenedor-botones">
+                </div>
+            </article><hr>
+            
+        }
+    </div>
+    <hr class="hr">
+    <div class="text-center paginacion">
+        <ul class="pagination">
+            <li class=""><a href="#" aria-label="Previous"><span>&laquo;</span></a></li>
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+            <li class=""><a href="#">2 <span class="sr-only"></span></a></li>
+            <li class=""><a href="#">3 <span class="sr-only"></span></a></li>
+            <li class=""><a href="#">4 <span class="sr-only"></span></a></li>
+            <li class=""><a href="#" aria-label="next"><span>&raquo;</span></a></li>
+        </ul>
+    </div>
+</body>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MMAnewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="foros">
+    <Key>
+      <PropertyRef Name="foro_id" />
+    </Key>
+    <Property Name="foro_id" Type="Int32" Nullable="false" />
+    <Property Name="foro_title" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="foro_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="foro_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="foro_autor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="foro_date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="noticias">
+    <Key>
+      <PropertyRef Name="noticia_id" />
+    </Key>
+    <Property Name="noticia_id" Type="Int32" Nullable="false" />
+    <Property Name="noticia_title" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="noticia_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="noticia_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="noticia_autor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="noticia_date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="MMAnewEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="foros" EntityType="Self.foros" />
+    <EntitySet Name="noticias" EntityType="Self.noticias" />
+  </EntityContainer>
+</Schema>

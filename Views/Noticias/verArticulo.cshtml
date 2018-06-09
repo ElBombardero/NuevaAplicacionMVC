@@ -1,0 +1,38 @@
+﻿@model NuevaAplicacionMVC.Models.noticias
+
+@{
+    ViewBag.Title = "verArticulo";
+}
+
+<div class="migas">
+    <ol class="breadcrumb paginacion-articulo">
+        <li><small>@Html.ActionLink("Inicio", "index", "noticias")</small></li>
+        <li><small>@Html.ActionLink("Noticias", "index", "noticias")</small></li>
+        <li class="active pagina-actual">Articulo</li>
+    </ol>
+</div>
+
+<div id="contenido-post">
+    <article class="clear-fix articulo">
+        <div class="contenedor-imagen-posteada" style="background-image: url(@Html.DisplayFor(model => model.noticia_image)); ">
+            <div class="imagen-posteada">
+                <h3 class="h4">@Html.DisplayFor(model => model.noticia_title)</h3>
+            </div>
+        </div>
+        <span class="glyphicon" style="margin-left:2px;">&#xe105; 5257</span>
+        <small style="float:right">@Html.DisplayFor(model => model.noticia_date)</small><hr>
+        <div class="contenido-articulo">
+            <p class="post-articulo">
+                @Html.DisplayFor(model => model.noticia_content)
+            </p>
+        </div>
+    </article><hr class="hr">
+    <div class="comentario-articulo">
+        <div class="contenedor" for="inputTexto">
+            <input id="inputTexto" class="theinput-2" style=""><button class="boton-2">env</button>
+        </div><hr>
+        <h2 class="comentarios-titulo">Comentarios</h2>
+        <div class="comentarios">
+        </div>
+    </div>
+</div>

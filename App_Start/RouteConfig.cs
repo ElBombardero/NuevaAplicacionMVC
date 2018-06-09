@@ -16,19 +16,19 @@ namespace NuevaAplicacionMVC
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Noticias", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "Persona",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Persona", action = "Index", id = UrlParameter.Optional }
+                name: "NuevaNoticia",
+                url: "NuevaNoticia",
+                defaults: new { controller = "Noticia", action = "NuevaNoticia", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
-                name: "articulo",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "NuevoArticulo", id = UrlParameter.Optional }
+                name: "Imagen",
+                url: "Imagen/{numeroImagen}",
+                defaults: new { controller = "Home", action = "Imagen"}
             );
         }
     }

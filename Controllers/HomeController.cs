@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NuevaAplicacionMVC.Models;
+using NuevaAplicacionMVC.Services;
 
 namespace NuevaAplicacionMVC.Controllers
 {
@@ -11,26 +12,14 @@ namespace NuevaAplicacionMVC.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+
+            var NoticiasService = new NoticiasService();
+            var modelo = NoticiasService.ObtenerNoticias();
+            return View(modelo);
         }
 
         public ActionResult ArticuloPosteado(){
             return View();
-        }
-
-        public ActionResult PostearArticulo(){
-            return View();
-        }
-
-        public ActionResult NuevaNoticia(){
-            Noticia articulo = new Noticia();
-            if (Request.Form["Titulo"]!= ""){                
-                articulo.Titulo = Request.Form ["Titulo"].ToString();
-                articulo.Imagen =Request.Form ["Imagen"].ToString();
-                articulo.Contenido =Request.Form ["Contenido"].ToString();
-                return View(articulo);
-            }
-            return RedirectToAction("Mensaje", "Persona");
         }
 
         public ActionResult Foro(){
@@ -46,7 +35,13 @@ namespace NuevaAplicacionMVC.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        public ActionResult Imagen(int numeroImagen)
+        {
+            var imagen = numeroImagen + numeroImagen;
+            ViewBag.Imagen = imagen;
             return View();
         }
     }

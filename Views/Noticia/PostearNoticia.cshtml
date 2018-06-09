@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "PostearNoticia";
+}
+<script src="~/Scripts/tinymce/tinymce.min.js"></script>
+<script src="~/Scripts/tinymce/init-tinymce.js"></script>
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<h2>PostearArticulo</h2>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title"> </h2>
+    </div>
+    <div class="panel-body">
+        <form action="NuevaNoticia" id="noticia" method="get" class="form-inline">
+            <div class="input-group form-group">
+                <span class="input-group-addon">Titulo</span>
+                <input type="text" class="form-control" id="Titulo" name="titulo">
+            </div><br>
+            <div class="input-group form-group">
+                <span class="input-group-addon">imagen</span>
+                <input type="text" class="form-control" id="Imagen" name="Imagen">
+            </div>
+            <textarea class="tinymce" id="Contenido" rows="40" name="Contenido"></textarea>
+            <hr class="hr">
+            <button type="submit" class="btn btn-primary pull-right">Publicar</button>
+        </form>
+    </div>
+</div>
+<script>
+    var TinyContenido = tinyMCE.get('contenido').getContent();
+    $(document).ready(function () {
+        $("#noticia").submit(function () {
+            var datosFormulario = {
+                Titulo: $("#Titulo").val(),
+                Imagen: $("#Imagen").val(),
+                Contenido: HttpUtility.HtmlDecode(tinyMCE.get('contenido').getContent()),
+            };
+        });
+    });
+</script>

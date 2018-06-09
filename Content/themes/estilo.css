@@ -6,6 +6,23 @@ body {
     background-repeat:no-repeat;
 }
 
+.ancho-7 {
+    width: 58.33333%;
+    position: relative;
+    padding-left: 15px;
+    min-height: 1px;
+    padding-right: 15px;
+}
+
+.ancho-2 {
+    width: 16.66667%;
+    float:left;
+}
+.ancho-3 {
+    width: 25%;
+    float:left;
+}
+
 .navbar{
 	border-radius:0px;
     margin-bottom:10px;
@@ -144,25 +161,42 @@ footer {
 
 /*=======================---Articulo Post---====================*/
 
+/*=======================---Crear articulo---====================*/
+.id-autor-fecha-container {
+    display:flex;
+    width:100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.id-autor-fecha-container .id{
+    width:50%;
+}
+.id-autor-fecha-container .autor {
+    width:50%;
+}
+.id-autor-fecha-container .fecha {
+    width:50%;
+}
+
+.id-autor-fecha-container + .titulo {
+    margin-bottom:0px;
+}
+.text-area {
+    resize:none;
+}
+/*=======================---Crear articulo---====================*/
+
 .articulo {
     width:100%;
     height:100%;
 }
 
 
-/.contenedor-imagen-posteada img{
-    width:80%;
-    margin:auto;
-    background-color: rgb(0, 0, 26);
-
-}
-
 .contenedor-imagen-posteada {
     border-style:solid;
     border-color:whitesmoke;
     margin:auto;
     width:85%;
-    background-image: url("http://www.bjpenn.com/wp-content/uploads/2015/06/Yoel-Romero.png");
     background-size: cover;
     background-position-x: 50%;
     background-position-y: 50%;
@@ -170,11 +204,14 @@ footer {
 }
 .h4{
     text-align: center;
-    margin: 11.3em 0 2em 0;
-    font-weight:500;
-    letter-spacing: 5px;
-    color: dodgerblue;
-    background: rgba(0, 0, 0, 0.70);
+    margin: 13.3em 5px 0.1em 0;
+    margin-right:0;
+    font-weight:900;
+    font-size:22px;
+    letter-spacing: 2.5px;
+	color: dodgerblue;
+	text-shadow: 0 0px 2px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     padding: 15px 0;
     border-bottom:solid;
     border-bottom-color:black;
@@ -186,7 +223,7 @@ footer {
 }
 
 .post-articulo {
-    font: oblique 120% sans-serif bold;
+    font-family:courier;
 }
 
 .contenido-articulo iframe {
@@ -194,7 +231,7 @@ footer {
 }
 
 .hr {
-    border:1px solid rgb(51, 122, 183);
+    border:1px solid Gainsboro ;
 }
 
 /*==Comentarios==*/
@@ -208,23 +245,46 @@ footer {
     width:100%;
 }
 
-#comentarios {
-    width:90%;
-    /*border:1px solid purple;*/
+.contenedor {
+	padding-top: 5px;
+	padding-bottom:5px;
+	width:95%;
+	height:85px;
+	border:2px;
+	border-top:1px;
+	border-left:1px;
+	padding-left:10px;
+	border-style:solid;
+	border-color:black ;
+	border-radius:5px;
+	padding-right:3px;
+    margin:auto;
 }
-.datos-comentario-usuario {
-    width:100%;
-    height:53px;
-    /*border:1px solid yellow; */
+
+.theinput-2 {
+	width:80%;
+	border:2px;
 }
-#comentarios img {
-    width:50px;
-    border:2px solid white;
-    border-radius:2px;
+
+.boton-2 {
+    border: unset;
+	width:20%;
+	height:100%;
+	background:transparent;
+	filter:brightness(130%);
 }
-.datos-comentario {
-    width:40%;
-    /*border:1px solid red; */
+
+.boton-2:active {
+	border:1px;
+	border-bottom-style:solid;
+	border-right-style:solid;
+	border-bottom-color:LightSteelBlue;
+	border-right-color:LightSteelBlue;
+	filter:unset;
+}
+.comentarios {
+    height:500px;
+    background-color:whitesmoke;
 }
 
 /*================Registro=========================*/
@@ -249,60 +309,71 @@ footer {
 
 /*=========================------FORO----===================================*/
 
-.foro-elemento {
-    border-style:solid;
-    border-radius:5px;
-    border-color:dodgerblue;
-    height:150px;
 
-}
+    .media {
+        position:relative;
+        max-height:150px;
+	    overflow:hidden;
+        border:1px;
+        border-style:solid;
+        border-color:whitesmoke;
+    }
 
-.foro-contenedor-imagen-contenido {
-    width:100%;
-    height:100%;
-}
+    .media:hover {
+        background-color:whitesmoke;
+    }
+   
+    .Contenedor-Imagen-foro {
+	    margin-right:10px;
+        height: 150px;
+        width: 200px;
+        float: left;
+    }
+    .Contenedor-Imagen-foro img{
+        height: 100%;
+        width: 100%;
+    }
 
-.foro-contenedor-imagen {
-    width:25%;
-    height:100%;
-    float:left;
-}
+    .texto {
+        padding: 10px;
+    }
+    
+    .post-title-foro {   
+        font-size: 1.5em;
+        font-weight:800;
+        margin-top: 2px;
+        color:dodgerblue;
+        display:unset;
+    }
 
-.foro-contenedor-imagen img{
-    width:55%;
-    height:50%;
-}
+    .destacar {
+        color:dodgerblue;
+        float:right;
+    }
 
-.foro-contenedor-contenido {
-    float:right;
-    width:75%;
-    height:100%;
-}
-
-.foro-contenido-titulo {
-    width:100%;
-    height:40%;
-}
-
-.foro-contenido-titulo-letra {
-    text-align: center;
-    font-weight:500;
-    letter-spacing: 1px;
-    color: black;
-    border-bottom:solid;
-    border-bottom-color:black;
-}
-
-.foro-contenido-articulo small {
-    letter-spacing: 0.1px;
-}
-
+    .foro-contenido {
+        margin: auto;
+    }
+    .link-foro {
+        width:100%;
+        height:100%;
+	    bottom:0;
+        left:0;
+	    position:absolute;
+	    right:0;
+	    top:0
+    }
 @media screen and (max-width:900px){
 /*==========================Layout==========================*/
     .body {
         width:100%;
     }
 
+    .ancho-7 {
+        width:100%;
+        padding-left: unset;
+        padding-right: unset;
+    }
 	article img {
 		height:200px; 
 		width:100%;
@@ -341,13 +412,18 @@ footer {
         margin:auto;
     }
     /*=====---FORO----====================*/
-
-    .foro-elemento {
-        height:240px;
-
+    
+    .media {
+        max-height:unset;
     }
-    .foro-contenido-titulo {
-        width:100%;
-        height:20%;
+    .Contenedor-Imagen-foro {
+        width: 100%;
+        height: 20%;
+        float: unset;
+    }
+}
+@media (min-width: 992px) {
+    .ancho-7 {
+        float:left;
     }
 }

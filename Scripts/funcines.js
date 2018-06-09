@@ -6,3 +6,10 @@
     }
 }
 
+$(document).ready(function () {
+    $('.theinput-2').focus(function () {
+        $('.contenedor').css('border-color', 'dodgerblue');
+    }).blur(function () {
+        $('.contenedor').css('border-color', 'black');
+    });
+});

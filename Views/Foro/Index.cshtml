@@ -1,0 +1,39 @@
+﻿@model List<NuevaAplicacionMVC.Models.Debate>
+@{
+    ViewBag.Title = "Foro";
+}
+
+<div class="">
+    <div class="migas">
+        <ol class="breadcrumb">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li class="active"><a href="#">foro</a></li>
+            <button class="mostrar-todo pull-right visible-xs visible-sm" onclick="OcultarContenido()">ocultar</button>
+        </ol>
+    </div>
+    <div class="Debates">
+        @foreach(var Debate in Model){
+            // No filtrar html @Html.Raw(Debate.contenidoPreview)
+            //Colocar clase con icono estrella si el debate es destacado
+            var destacar = (Debate.destacar) ? "glyphicon glyphicon-bookmark destacar" : string.Empty;
+            <div class="media">
+                <div class="Contenedor-Imagen-foro">
+                    <img src='@Url.Content(@Debate.imagen)' />
+                </div>
+                <div class="texto">
+                    <h2 class="post-title-foro">@Debate.titulo</h2>
+                    <span class="@destacar" title="destacado"></span>
+                    <p>
+                        <span class="post-fecha">@Debate.fecha</span>  por <span class="post-autor"><a href="#">@Debate.autor</a></span>
+                        <span class="visitas">15,000 </span> <small class="comentarioNo">visitas </small>
+                    </p>
+                    <p class="foro-contenido text-justify">
+                        @Html.limitar(Debate.contenido, 275)
+                    </p>
+                    <a class="direccion-articulo"></a>
+                </div>
+                <a class="link-foro" href="#"> </a>
+            </div><hr>
+        }
+    </div>
+</div>

@@ -1,0 +1,66 @@
+﻿@model NuevaAplicacionMVC.Models.noticias
+
+<script src="~/Scripts/tinymce/tinymce.min.js"></script>
+<script src="~/Scripts/tinymce/init-tinymce.js"></script>
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<h2>Crear Noticia</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2 class="panel-title"> </h2>
+    </div>
+    <div class="panel-body">
+    @using (Html.BeginForm( new { @class = "form-control" })) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="id-autor-fecha-container">
+            <div class="input-group form-group id">
+                <span class="input-group-addon">id</span>
+                @Html.TextBoxFor(model => model.noticia_id, new { @class = "form-control" })
+            </div>
+            <div class="input-group form-group autor">
+                <span class="input-group-addon">Autor</span>
+                @Html.TextBoxFor(model => model.noticia_autor, new { @class = "form-control" })
+            </div>
+            <div class="input-group form-group fecha">
+                <span class="input-group-addon">Fecha</span>
+                @Html.TextBoxFor(model => model.noticia_date, new {@type = "date", @class = "form-control" })
+            </div>
+        </div>
+        <div class="input-group form-group titulo">
+            <span class="input-group-addon">Titulo</span>
+            @Html.TextBoxFor(model => model.noticia_title, new { @class = "form-control" })
+        </div><br>
+        <div class="input-group form-group">
+            <span class="input-group-addon">imagen</span>
+            @Html.TextBoxFor(model => model.noticia_image, new { @class = "form-control" })
+        </div>
+        @Html.Raw(Html.TextAreaFor(model => model.noticia_content, new { @class = "no-tinymce form-control text-area", @id="Contenido", @rows="20", @resize = "none", @name = "Contenido" }))
+
+        @Html.ValidationMessageFor(model => model.noticia_id)
+        @Html.ValidationMessageFor(model => model.noticia_title)
+        @Html.ValidationMessageFor(model => model.noticia_content)
+        @Html.ValidationMessageFor(model => model.noticia_date)
+
+        <hr class="hr">
+        <button type="submit" class="btn btn-primary pull-right">Publicar</button>
+        }
+    </div>
+</div>
+<script>
+    var TinyContenido = tinyMCE.get('contenido').getContent();
+    $(document).ready(function () {
+        $("#noticia").submit(function () {
+            var datosFormulario = {
+                Titulo: $("#Titulo").val(),
+                Imagen: $("#Imagen").val(),
+                Contenido: HttpUtility.HtmlDecode(tinyMCE.get('contenido').getContent()),
+            };
+        });
+    });
+    var date = new Date();
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,68 @@
+﻿@model NuevaAplicacionMVC.Models.Noticia
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Noticia</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.titulo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.titulo)
+            @Html.ValidationMessageFor(model => model.titulo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.imagen)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.imagen)
+            @Html.ValidationMessageFor(model => model.imagen)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.contenido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.contenido)
+            @Html.ValidationMessageFor(model => model.contenido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.contenidoPreview)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.contenidoPreview)
+            @Html.ValidationMessageFor(model => model.contenidoPreview)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.autor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.autor)
+            @Html.ValidationMessageFor(model => model.autor)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,50 @@
+﻿@model NuevaAplicacionMVC.Models.Noticia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Noticia</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.imagen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.imagen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.contenido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contenido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.contenidoPreview)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contenidoPreview)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.autor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.autor)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

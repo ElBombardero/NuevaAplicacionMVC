@@ -39,11 +39,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -60,9 +69,6 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -182,16 +188,46 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ForoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NoticiaController.cs" />
+    <Compile Include="Controllers\NoticiasController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HTMLHelpers.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Articulo.cs" />
+    <Compile Include="Models\Debate.cs" />
+    <Compile Include="Models\foros.cs">
+      <DependentUpon>MMAnew.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MMAnew.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MMAnew.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MMAnew.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MMAnew.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MMAnew.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MMAnew.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Noticia.cs" />
+    <Compile Include="Models\Noticias.cs">
+      <DependentUpon>MMAnew.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NuevaAplicacionMVCContext.cs" />
     <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\SQLDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DebateService.cs" />
+    <Compile Include="Services\NoticiasService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -273,6 +309,23 @@
     <Content Include="Images\img\Woodley.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\MMAnew.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MMAnew.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MMAnew.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MMAnew.edmx</DependentUpon>
+      <LastGenOutput>MMAnew.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MMAnew.edmx.diagram">
+      <DependentUpon>MMAnew.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\MMAnew.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MMAnew.edmx</DependentUpon>
+      <LastGenOutput>MMAnew.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\funcines.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -371,7 +424,9 @@
     <Content Include="Scripts\tinymce\themes\inlite\theme.min.js" />
     <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -417,8 +472,6 @@
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\Persona\Datos.cshtml" />
     <Content Include="Views\Home\ArticuloPosteado.cshtml" />
-    <Content Include="Views\Home\PostearArticulo.cshtml" />
-    <Content Include="Views\Home\NuevaNoticia.cshtml" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
@@ -427,13 +480,28 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Views\Home\Foro.cshtml" />
+    <Content Include="Views\Noticia\NuevaNoticia.cshtml" />
+    <Content Include="Views\Noticia\PostearNoticia.cshtml" />
+    <Content Include="Views\Home\Imagen.cshtml" />
+    <Content Include="Views\Foro\Index.cshtml" />
+    <Content Include="Views\Noticias\Index.cshtml" />
+    <Content Include="Views\Noticias\Details.cshtml" />
+    <Content Include="Views\Noticias\Create.cshtml" />
+    <Content Include="Views\Noticias\Edit.cshtml" />
+    <Content Include="Views\Noticias\Delete.cshtml" />
+    <Content Include="Views\Noticia\create.cshtml" />
+    <Content Include="Views\Noticias\noticiasDB.cshtml" />
+    <Content Include="Views\Noticias\verArticulo.cshtml" />
+    <Content Include="Views\Noticias\CrearArticulo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Noticias\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
